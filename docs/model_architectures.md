@@ -20,8 +20,7 @@ The objective is to isolate the impact of structural design on overfitting sensi
 
 ### Baseline Model Specifics
 
-The implementation from  
-:contentReference[oaicite:0]{index=0}  
+The implementation from
 relies on a more direct CNN encoding strategy.
 
 - The Vision Transformer (ViT) operates on CNN feature outputs treated as token grids  
@@ -38,7 +37,7 @@ relies on a more direct CNN encoding strategy.
 
 ### Proposed Robust Model Specifics
 
-This variant follows the standard **ViT-B/16 configuration** described by :contentReference[oaicite:1]{index=1}.
+This variant follows the standard **ViT-B/16 configuration** described by :
 
 - Hidden size: **768**
 - MLP dimension: **3072**
