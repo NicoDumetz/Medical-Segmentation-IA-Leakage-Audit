@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Build / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Training artifacts
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+.codex
+# Local datasets and generated evaluation outputs
+Dataset_Lesion_Comparison/
+independent_eval_results.json
+threshold_test_results.json
+
+# Project outputs
+results/
