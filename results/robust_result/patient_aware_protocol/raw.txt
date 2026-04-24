@@ -1,0 +1,234 @@
+
+:/workspace# DATASET_ROOT=/tmp/Dataset_Comparison/dataset/ python3 src/nourredine_paper/train.py
+Training on cuda | train=9703 | val=1215 | batch=8 | workers=8 | val_split=val
+Epochs:   0%|                                                                | 0/50 [00:00<?, ?it/s]                                      Epoch 1/50 | Train Loss: 0.1585 | Train Dice: 0.6028 | Val Dice: 0.5983
+Epochs:   2%| | 1/50 [02:15<1:50:55, 135.83s/it, train_dice=0.6028, train_loss=0.1585, val_dice=0.59                                      Epoch 2/50 | Train Loss: 0.1057 | Train Dice: 0.7306 | Val Dice: 0.5410
+Epochs:   4%| | 2/50 [04:26<1:46:24, 133.01s/it, train_dice=0.7306, train_loss=0.1057, val_dice=0.54                                      Epoch 3/50 | Train Loss: 0.0872 | Train Dice: 0.7768 | Val Dice: 0.7492
+Epochs:   6%| | 3/50 [06:37<1:43:23, 131.99s/it, train_dice=0.7768, train_loss=0.0872, val_dice=0.74                                      Epoch 4/50 | Train Loss: 0.0760 | Train Dice: 0.8069 | Val Dice: 0.7193
+Epochs:   8%| | 4/50 [08:48<1:40:54, 131.62s/it, train_dice=0.8069, train_loss=0.0760, val_dice=0.71                                      Epoch 5/50 | Train Loss: 0.0692 | Train Dice: 0.8246 | Val Dice: 0.7052
+Epochs:  10%| | 5/50 [11:00<1:38:46, 131.70s/it, train_dice=0.8246, train_loss=0.0692, val_dice=0.70                                      Epoch 6/50 | Train Loss: 0.0628 | Train Dice: 0.8414 | Val Dice: 0.7040
+Epochs:  12%| | 6/50 [13:12<1:36:37, 131.75s/it, train_dice=0.8414, train_loss=0.0628, val_dice=0.70                                      Epoch 7/50 | Train Loss: 0.0589 | Train Dice: 0.8507 | Val Dice: 0.4993
+Epochs:  14%|▏| 7/50 [15:24<1:34:24, 131.73s/it, train_dice=0.8507, train_loss=0.0589, val_dice=0.49                                      Epoch 8/50 | Train Loss: 0.0562 | Train Dice: 0.8576 | Val Dice: 0.5738
+Epochs:  16%|▏| 8/50 [17:36<1:32:24, 132.01s/it, train_dice=0.8576, train_loss=0.0562, val_dice=0.57                                      Epoch 9/50 | Train Loss: 0.0529 | Train Dice: 0.8671 | Val Dice: 0.6674
+Epochs:  18%|▏| 9/50 [19:49<1:30:24, 132.30s/it, train_dice=0.8671, train_loss=0.0529, val_dice=0.66                                      Epoch 10/50 | Train Loss: 0.0498 | Train Dice: 0.8744 | Val Dice: 0.5169
+Epochs:  20%|▏| 10/50 [22:03<1:28:33, 132.83s/it, train_dice=0.8744, train_loss=0.0498, val_dice=0.5                                      Epoch 11/50 | Train Loss: 0.0482 | Train Dice: 0.8797 | Val Dice: 0.5823
+Epochs:  22%|▏| 11/50 [24:16<1:26:17, 132.76s/it, train_dice=0.8797, train_loss=0.0482, val_dice=0.5                                      Epoch 12/50 | Train Loss: 0.0470 | Train Dice: 0.8816 | Val Dice: 0.6116
+Epochs:  24%|▏| 12/50 [26:28<1:24:00, 132.64s/it, train_dice=0.8816, train_loss=0.0470, val_dice=0.6                                      Epoch 13/50 | Train Loss: 0.0449 | Train Dice: 0.8870 | Val Dice: 0.5299
+Epochs:  26%|▎| 13/50 [28:40<1:21:41, 132.48s/it, train_dice=0.8870, train_loss=0.0449, val_dice=0.5                                      Epoch 14/50 | Train Loss: 0.0440 | Train Dice: 0.8897 | Val Dice: 0.5792
+Epochs:  28%|▎| 14/50 [30:52<1:19:19, 132.22s/it, train_dice=0.8897, train_loss=0.0440, val_dice=0.5                                      Epoch 15/50 | Train Loss: 0.0425 | Train Dice: 0.8928 | Val Dice: 0.5805
+Epochs:  30%|▎| 15/50 [33:03<1:16:58, 131.95s/it, train_dice=0.8928, train_loss=0.0425, val_dice=0.5                                      Epoch 16/50 | Train Loss: 0.0417 | Train Dice: 0.8961 | Val Dice: 0.6522
+Epochs:  32%|▎| 16/50 [35:15<1:14:47, 131.99s/it, train_dice=0.8961, train_loss=0.0417, val_dice=0.6                                      Epoch 17/50 | Train Loss: 0.0398 | Train Dice: 0.8998 | Val Dice: 0.6118
+Epochs:  34%|▎| 17/50 [37:26<1:12:24, 131.64s/it, train_dice=0.8998, train_loss=0.0398, val_dice=0.6                                      Epoch 18/50 | Train Loss: 0.0381 | Train Dice: 0.9044 | Val Dice: 0.6048
+Epochs:  36%|▎| 18/50 [39:40<1:10:30, 132.19s/it, train_dice=0.9044, train_loss=0.0381, val_dice=0.6                                      Epoch 19/50 | Train Loss: 0.0380 | Train Dice: 0.9052 | Val Dice: 0.5726
+Epochs:  38%|▍| 19/50 [41:52<1:08:22, 132.33s/it, train_dice=0.9052, train_loss=0.0380, val_dice=0.5                                      Epoch 20/50 | Train Loss: 0.0368 | Train Dice: 0.9081 | Val Dice: 0.6715
+Epochs:  40%|▍| 20/50 [44:05<1:06:12, 132.43s/it, train_dice=0.9081, train_loss=0.0368, val_dice=0.6                                      Epoch 21/50 | Train Loss: 0.0361 | Train Dice: 0.9098 | Val Dice: 0.6566
+Epochs:  42%|▍| 21/50 [46:16<1:03:51, 132.14s/it, train_dice=0.9098, train_loss=0.0361, val_dice=0.6                                      Epoch 22/50 | Train Loss: 0.0355 | Train Dice: 0.9115 | Val Dice: 0.5960
+Epochs:  44%|▍| 22/50 [48:27<1:01:25, 131.63s/it, train_dice=0.9115, train_loss=0.0355, val_dice=0.5                                      Epoch 23/50 | Train Loss: 0.0346 | Train Dice: 0.9136 | Val Dice: 0.6448
+Epochs:  46%|▍| 23/50 [50:37<59:05, 131.30s/it, train_dice=0.9136, train_loss=0.0346, val_dice=0.644                                      Epoch 24/50 | Train Loss: 0.0335 | Train Dice: 0.9159 | Val Dice: 0.5111
+Epochs:  48%|▍| 24/50 [52:49<56:55, 131.35s/it, train_dice=0.9159, train_loss=0.0335, val_dice=0.511                                      Epoch 25/50 | Train Loss: 0.0328 | Train Dice: 0.9181 | Val Dice: 0.5789
+Epochs:  50%|▌| 25/50 [55:00<54:42, 131.30s/it, train_dice=0.9181, train_loss=0.0328, val_dice=0.578                                      Epoch 26/50 | Train Loss: 0.0324 | Train Dice: 0.9193 | Val Dice: 0.5751
+Epochs:  52%|▌| 26/50 [57:11<52:28, 131.18s/it, train_dice=0.9193, train_loss=0.0324, val_dice=0.575                                      Epoch 27/50 | Train Loss: 0.0317 | Train Dice: 0.9211 | Val Dice: 0.5450
+Epochs:  54%|▌| 27/50 [59:22<50:18, 131.26s/it, train_dice=0.9211, train_loss=0.0317, val_dice=0.545                                      Epoch 28/50 | Train Loss: 0.0308 | Train Dice: 0.9230 | Val Dice: 0.5761
+Epochs:  56%|▌| 28/50 [1:01:34<48:08, 131.28s/it, train_dice=0.9230, train_loss=0.0308, val_dice=0.5                                      Epoch 29/50 | Train Loss: 0.0303 | Train Dice: 0.9247 | Val Dice: 0.6215
+Epochs:  58%|▌| 29/50 [1:03:45<46:00, 131.46s/it, train_dice=0.9247, train_loss=0.0303, val_dice=0.6                                      Epoch 30/50 | Train Loss: 0.0296 | Train Dice: 0.9259 | Val Dice: 0.5776
+Epochs:  60%|▌| 30/50 [1:05:59<44:02, 132.15s/it, train_dice=0.9259, train_loss=0.0296, val_dice=0.5                                      Epoch 31/50 | Train Loss: 0.0294 | Train Dice: 0.9271 | Val Dice: 0.6220
+Epochs:  62%|▌| 31/50 [1:08:12<41:54, 132.33s/it, train_dice=0.9271, train_loss=0.0294, val_dice=0.6                                      Epoch 32/50 | Train Loss: 0.0283 | Train Dice: 0.9290 | Val Dice: 0.6156
+Epochs:  64%|▋| 32/50 [1:10:24<39:41, 132.33s/it, train_dice=0.9290, train_loss=0.0283, val_dice=0.6                                      Epoch 33/50 | Train Loss: 0.0280 | Train Dice: 0.9303 | Val Dice: 0.6270
+Epochs:  66%|▋| 33/50 [1:12:35<37:20, 131.77s/it, train_dice=0.9303, train_loss=0.0280, val_dice=0.6                                      Epoch 34/50 | Train Loss: 0.0273 | Train Dice: 0.9317 | Val Dice: 0.5849
+Epochs:  68%|▋| 34/50 [1:14:46<35:04, 131.55s/it, train_dice=0.9317, train_loss=0.0273, val_dice=0.5                                      Epoch 35/50 | Train Loss: 0.0270 | Train Dice: 0.9327 | Val Dice: 0.6578
+Epochs:  70%|▋| 35/50 [1:16:56<32:46, 131.08s/it, train_dice=0.9327, train_loss=0.0270, val_dice=0.6                                      Epoch 36/50 | Train Loss: 0.0265 | Train Dice: 0.9338 | Val Dice: 0.5886
+Epochs:  72%|▋| 36/50 [1:19:06<30:31, 130.83s/it, train_dice=0.9338, train_loss=0.0265, val_dice=0.5                                      Epoch 37/50 | Train Loss: 0.0257 | Train Dice: 0.9357 | Val Dice: 0.5684
+Epochs:  74%|▋| 37/50 [1:21:16<28:17, 130.58s/it, train_dice=0.9357, train_loss=0.0257, val_dice=0.5                                      Epoch 38/50 | Train Loss: 0.0254 | Train Dice: 0.9365 | Val Dice: 0.6237
+Epochs:  76%|▊| 38/50 [1:23:28<26:13, 131.11s/it, train_dice=0.9365, train_loss=0.0254, val_dice=0.6                                      Epoch 39/50 | Train Loss: 0.0250 | Train Dice: 0.9377 | Val Dice: 0.5884
+Epochs:  78%|▊| 39/50 [1:25:40<24:02, 131.15s/it, train_dice=0.9377, train_loss=0.0250, val_dice=0.5                                      Epoch 40/50 | Train Loss: 0.0244 | Train Dice: 0.9394 | Val Dice: 0.5855
+Epochs:  80%|▊| 40/50 [1:27:53<21:59, 131.92s/it, train_dice=0.9394, train_loss=0.0244, val_dice=0.5                                      Epoch 41/50 | Train Loss: 0.0237 | Train Dice: 0.9407 | Val Dice: 0.5855
+Epochs:  82%|▊| 41/50 [1:30:04<19:44, 131.57s/it, train_dice=0.9407, train_loss=0.0237, val_dice=0.5                                      Epoch 42/50 | Train Loss: 0.0233 | Train Dice: 0.9416 | Val Dice: 0.6217
+Epochs:  84%|▊| 42/50 [1:32:16<17:33, 131.68s/it, train_dice=0.9416, train_loss=0.0233, val_dice=0.6                                      Epoch 43/50 | Train Loss: 0.0227 | Train Dice: 0.9429 | Val Dice: 0.5955
+Epochs:  86%|▊| 43/50 [1:34:30<15:25, 132.28s/it, train_dice=0.9429, train_loss=0.0227, val_dice=0.5                                      Epoch 44/50 | Train Loss: 0.0225 | Train Dice: 0.9441 | Val Dice: 0.6019
+Epochs:  88%|▉| 44/50 [1:36:41<13:12, 132.06s/it, train_dice=0.9441, train_loss=0.0225, val_dice=0.6                                      Epoch 45/50 | Train Loss: 0.0220 | Train Dice: 0.9453 | Val Dice: 0.6189
+Epochs:  90%|▉| 45/50 [1:38:52<10:57, 131.58s/it, train_dice=0.9453, train_loss=0.0220, val_dice=0.6                                      Epoch 46/50 | Train Loss: 0.0214 | Train Dice: 0.9464 | Val Dice: 0.5932
+Epochs:  92%|▉| 46/50 [1:41:02<08:44, 131.20s/it, train_dice=0.9464, train_loss=0.0214, val_dice=0.5                                      Epoch 47/50 | Train Loss: 0.0209 | Train Dice: 0.9481 | Val Dice: 0.5775
+Epochs:  94%|▉| 47/50 [1:43:12<06:32, 130.91s/it, train_dice=0.9481, train_loss=0.0209, val_dice=0.5                                      Epoch 48/50 | Train Loss: 0.0208 | Train Dice: 0.9483 | Val Dice: 0.6199
+Epochs:  96%|▉| 48/50 [1:45:23<04:21, 130.80s/it, train_dice=0.9483, train_loss=0.0208, val_dice=0.6                                      Epoch 49/50 | Train Loss: 0.0204 | Train Dice: 0.9492 | Val Dice: 0.6041
+Epochs:  98%|▉| 49/50 [1:47:33<02:10, 130.62s/it, train_dice=0.9492, train_loss=0.0204, val_dice=0.6                                      Epoch 50/50 | Train Loss: 0.0203 | Train Dice: 0.9497 | Val Dice: 0.6039
+Epochs: 100%|█| 50/50 [1:49:45<00:00, 131.71s/it, train_dice=0.9497, train_loss=0.0203, val_dice=0.6
+root@a99bd86a5136:/workspace#
+
+ python3 src/nourredine_paper/threshold_test.py   --model-path checkpoints/epoch_50.pth   --dataset-root /tmDataset_Comparison/dataset/
+Device: cuda
+Test dataset: /tmp/Dataset_Comparison/dataset/test
+Images: 2338
+Checkpoint: checkpoints/epoch_50.pth
+Thresholds: 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9
+Model classes: 2
+Inference test: 100%|████████████████████████████████████████████████████████████████████████████████████| 293/293 [00:15<00:00, 19.09it/s]
+
+=================================================================
+RESULTATS PAR SEUIL SUR LE SET DE TEST
+=================================================================
+Seuil    | Dice     | IoU      | Precision  | Recall
+-----------------------------------------------------------------
+0.1      | 67.70    | 54.35    | 80.47      | 66.70
+0.2      | 65.89    | 52.47    | 81.99      | 63.02
+0.3      | 64.44    | 51.00    | 83.05      | 60.44
+0.4      | 63.23    | 49.78    | 83.72      | 58.40
+0.5      | 62.13    | 48.67    | 84.37      | 56.63
+0.6      | 60.91    | 47.46    | 85.10      | 54.78
+0.7      | 59.36    | 45.95    | 85.85      | 52.57
+0.8      | 57.20    | 43.87    | 86.84      | 49.67
+0.9      | 53.63    | 40.49    | 88.23      | 45.18
+=================================================================
+FINAL VERDICT: threshold 0.1 gives 67.70% Dice.
+=================================================================
+Results saved to: /workspace/threshold_test_results.json
+root@a99bd86a5136:/workspace#
+
+
+workspace# python3 src/nourredine_paper/threshold_test.py   --model-path checkpoints/epoch_30.pth   --dataset-root /tmp/Dataset_Comparison/dataset/
+Device: cuda
+Test dataset: /tmp/Dataset_Comparison/dataset/test
+Images: 2338
+Checkpoint: checkpoints/epoch_30.pth
+Thresholds: 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9
+Model classes: 2
+Inference test: 100%|████████████████████████████████████████████████████████████████████████████████████| 293/293 [00:15<00:00, 18.96it/s]
+
+=================================================================
+RESULTATS PAR SEUIL SUR LE SET DE TEST
+=================================================================
+Seuil    | Dice     | IoU      | Precision  | Recall
+-----------------------------------------------------------------
+0.1      | 69.70    | 56.60    | 79.18      | 70.31
+0.2      | 67.33    | 54.20    | 81.98      | 64.70
+0.3      | 65.12    | 51.98    | 83.94      | 60.54
+0.4      | 62.97    | 49.84    | 85.45      | 56.97
+0.5      | 61.16    | 48.04    | 86.44      | 54.18
+0.6      | 59.11    | 46.03    | 87.50      | 51.29
+0.7      | 56.52    | 43.55    | 88.70      | 47.93
+0.8      | 53.01    | 40.28    | 90.11      | 43.75
+0.9      | 47.47    | 35.32    | 92.32      | 37.74
+=================================================================
+FINAL VERDICT: threshold 0.1 gives 69.70% Dice.
+=================================================================
+Results saved to: /workspace/threshold_test_results.json
+root@a99bd86a5136:/workspace#
+
+
+rc/nourredine_paper/threshold_test.py   --model-path checkpoints/epoch_20.pth   --dataset-root /tmp/Dataset_Comparison/dataset/
+Device: cuda
+Test dataset: /tmp/Dataset_Comparison/dataset/test
+Images: 2338
+Checkpoint: checkpoints/epoch_20.pth
+Thresholds: 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9
+Model classes: 2
+Inference test: 100%|████████████████████████████████████████████████████████████████████████████████████| 293/293 [00:15<00:00, 18.61it/s]
+
+=================================================================
+RESULTATS PAR SEUIL SUR LE SET DE TEST
+=================================================================
+Seuil    | Dice     | IoU      | Precision  | Recall
+-----------------------------------------------------------------
+0.1      | 68.31    | 55.19    | 77.74      | 70.26
+0.2      | 66.36    | 53.18    | 80.31      | 65.53
+0.3      | 64.63    | 51.38    | 81.97      | 62.07
+0.4      | 62.93    | 49.65    | 83.22      | 59.01
+0.5      | 61.36    | 48.04    | 84.42      | 56.35
+0.6      | 59.50    | 46.19    | 85.44      | 53.55
+0.7      | 57.16    | 43.93    | 86.50      | 50.32
+0.8      | 54.09    | 41.02    | 87.81      | 46.35
+0.9      | 49.22    | 36.57    | 89.58      | 40.55
+=================================================================
+FINAL VERDICT: threshold 0.1 gives 68.31% Dice.
+=================================================================
+Results saved to: /workspace/threshold_test_results.json
+root@a99bd86a5136:/workspace#
+
+
+ce# python3 src/nourredine_paper/indepedant.py   --model-path checkpoints/epoch_30.pth   --dataset-root /tmp/Dataset_Comparison
+Device: cuda
+Independent dataset: /tmp/Dataset_Comparison/independent
+Images: 4232
+Checkpoint: checkpoints/epoch_30.pth
+Model classes: 2
+Inference independent: 100%|█████████████████████████████████████████████████████████████████████████████| 529/529 [00:35<00:00, 14.92it/s]
+
+=== Independent Holdout Evaluation ===
+Pixel Dice:               69.58%
+Pixel IoU:                53.35%
+Pixel Precision:          91.36%
+Pixel Recall:             56.18%
+Pixel Accuracy:           93.47%
+Mean Image Dice:          65.63%
+Mean Dice Positive Only:  65.63%
+Predicted Positive Images:4163 / 4232
+Target Positive Images:   4232 / 4232
+Predicted Positive Pixels:17345244
+Target Positive Pixels:   28204926
+
+Per patient:
+Patient     | Images | GT+ Img | Pred+ Img | Mean Dice | Dice GT+
+------------------------------------------------------------------------
+tnp         |   1350 |    1350 |      1306 |    60.70% |   60.70%
+tp          |   2882 |    2882 |      2857 |    67.95% |   67.95%
+
+Results saved to: /workspace/independent_eval_results.json
+
+ python3 src/nourredine_paper/indepedant.py   --model-path checkpoints/epoch_50.pth   --dataset-root /tmp/Dataset_Comparison
+Device: cuda
+Independent dataset: /tmp/Dataset_Comparison/independent
+Images: 4232
+Checkpoint: checkpoints/epoch_50.pth
+Model classes: 2
+Inference independent: 100%|█████████████████████████████████████████████████████████████████████████████| 529/529 [00:33<00:00, 15.64it/s]
+
+=== Independent Holdout Evaluation ===
+Pixel Dice:               71.44%
+Pixel IoU:                55.57%
+Pixel Precision:          91.72%
+Pixel Recall:             58.51%
+Pixel Accuracy:           93.79%
+Mean Image Dice:          69.59%
+Mean Dice Positive Only:  69.59%
+Predicted Positive Images:4182 / 4232
+Target Positive Images:   4232 / 4232
+Predicted Positive Pixels:17992002
+Target Positive Pixels:   28204926
+
+Per patient:
+Patient     | Images | GT+ Img | Pred+ Img | Mean Dice | Dice GT+
+------------------------------------------------------------------------
+tnp         |   1350 |    1350 |      1336 |    71.60% |   71.60%
+tp          |   2882 |    2882 |      2846 |    68.65% |   68.65%
+
+Results saved to: /workspace/indep
+
+
+# python3 src/nourredine_paper/indepedant.py   --model-path checkpoints/epoch_20.pth   --dataset-root /tmp/Dataset_Comparison
+Device: cuda
+Independent dataset: /tmp/Dataset_Comparison/independent
+Images: 4232
+Checkpoint: checkpoints/epoch_20.pth
+Model classes: 2
+Inference independent: 100%|█████████████████████████████████████████████████████████████████████████████| 529/529 [00:33<00:00, 15.85it/s]
+
+=== Independent Holdout Evaluation ===
+Pixel Dice:               71.07%
+Pixel IoU:                55.12%
+Pixel Precision:          91.46%
+Pixel Recall:             58.11%
+Pixel Accuracy:           93.72%
+Mean Image Dice:          67.62%
+Mean Dice Positive Only:  67.62%
+Predicted Positive Images:4116 / 4232
+Target Positive Images:   4232 / 4232
+Predicted Positive Pixels:17921286
+Target Positive Pixels:   28204926
+
+Per patient:
+Patient     | Images | GT+ Img | Pred+ Img | Mean Dice | Dice GT+
+------------------------------------------------------------------------
+tnp         |   1350 |    1350 |      1308 |    66.07% |   66.07%
+tp          |   2882 |    2882 |      2808 |    68.35% |   68.35%
+
+Results saved to: /workspace/independent_eval_results.json
+root@a99bd86a5136:/workspace#
