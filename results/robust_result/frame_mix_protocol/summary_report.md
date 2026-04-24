@@ -1,16 +1,22 @@
-# Audit Report: Frame-Mix Protocol on "Robust" TransUNet (Paper Implementation)
+# Frame-Mix Protocol on "Robust" TransUNet
 
 ---
 
-## 1. Illusion of Performance: Peak Metrics Summary
+## 1. Performance Summary
 
-The **standard TransUNet architecture (ResNetV2 + ViT)**, due to its higher capacity, demonstrates an exceptional ability to memorize the training distribution when exposed to a **Frame-Mix (leakage-prone) split**.
+The **standard TransUNet architecture (ResNetV2 + ViT)** was trained using a **Frame-Mix protocol**, where frames from the same patient/sequence can appear across training, validation, and test sets.
+
+This protocol produces extremely high internal scores, suggesting strong model performance under the biased evaluation setup.
 
 | Evaluation | Epoch 50 | Epoch 40 | Epoch 30 |
 |------------|----------|----------|----------|
-| Train Dice | 95.13%   | 94.00%   | 92.65%   |
-| Val Dice   | 93.36%   | 93.16%   | 92.60%   |
+| Train Dice | 95.13% | 94.00% | 92.65% |
+| Val Dice | 93.36% | 93.16% | 92.60% |
 | Internal Test Dice | 93.29% (thr=0.4) | 93.07% (thr=0.5) | 92.45% (thr=0.5) |
+
+---
+
+## 2. Training Dynamics
 
 ### Dice Evolution
 
@@ -20,127 +26,160 @@ The **standard TransUNet architecture (ResNetV2 + ViT)**, due to its higher capa
 
 ![Loss Curve](curves/Loss.png)
 
-### Interpretation
-
-On internal evaluation, the model appears near-perfect:
-
-- Dice scores exceed **93%**
-- Training and validation curves remain tightly coupled
-- No apparent overfitting signal
-
-A superficial analysis would conclude that the architecture successfully solves Crohn’s disease segmentation.
-
----
-
-## 2. Clinical Reality Check: Independent Holdout
-
-Evaluation on **fully unseen patients** reveals a severe performance collapse.
-
-### Independent Metrics
-
-![Independent Dice/IoU](curves/independant_iou_dice.png)
-
-![Independent Precision/Recall](curves/independant_rec_prec.png)
-
-| Epoch | Dice (Holdout) | Δ vs Internal Test | Recall | Precision |
-|------|----------------|--------------------|--------|-----------|
-| 30   | 73.66%         | -18.79%            | 62.63% | 89.56%    |
-| 40   | 72.24%         | -20.83%            | 61.22% | 90.09%    |
-| 50   | 70.17%         | -23.12%            | 57.88% | 91.03%    |
-
 ### Key Observation
 
-- Precision remains **very high (>90%)**
-- Recall drops significantly (**~58–62%**)
+- Train Dice reaches **95.13%**
+- Validation Dice reaches **93.36%**
+- Internal test Dice reaches **93.29%**
+- Training, validation, and internal test scores remain highly aligned
 
 ### Interpretation
 
-The model does not generate false positives, but fails to detect a substantial portion of pathological regions.
-
-> Up to **40% of lesions remain undetected** on new patients.
+The model appears highly effective under internal evaluation.  
+However, the close alignment between train, validation, and test performance is consistent with a Frame-Mix split where temporally related frames are shared across sets.
 
 ---
 
-## 3. Evidence of Memorization: Epoch Paradox
+## 3. Threshold Analysis
 
-### Threshold Optimization
+### Dice vs Threshold
 
 ![Dice Threshold](threshold_analysis/Dice_threshold.png)
 
-The most critical observation lies in the **divergence between internal and external performance across epochs**:
+### Epoch 50 Threshold Results
 
-- Internal Test (biased):
-  - Improves from **92.45% → 93.29%**
-- Independent Holdout:
-  - Degrades from **73.66% → 70.17%**
+| Threshold | Dice | IoU | Precision | Recall |
+|----------|------|-----|-----------|--------|
+| 0.1 | 91.46% | 84.76% | 86.49% | 97.76% |
+| 0.2 | 92.63% | 86.71% | 89.54% | 96.55% |
+| 0.3 | 93.11% | 87.54% | 91.40% | 95.46% |
+| 0.4 | 93.29% | 87.87% | 92.77% | 94.38% |
+| 0.5 | 93.28% | 87.86% | 93.88% | 93.25% |
+| 0.6 | 93.10% | 87.57% | 94.86% | 91.98% |
+| 0.7 | 92.72% | 86.94% | 95.77% | 90.46% |
+| 0.8 | 91.99% | 85.75% | 96.72% | 88.37% |
+| 0.9 | 90.37% | 83.16% | 97.82% | 84.77% |
 
-### Interpretation
+### Key Signals
 
-Between Epoch 30 and Epoch 50:
-
-- The model stops learning generalizable patterns
-- It reallocates capacity to memorize dataset-specific features:
-  - Ultrasound texture
-  - Acquisition artifacts
-  - Patient-specific anatomy
-
-This leads to:
-
-- Improved performance on corrupted test data
-- Degraded performance on real-world data
-
-This behavior is a direct signature of **data leakage exploitation**.
-
----
-
-## 4. Bias Amplification Through Model Capacity
-
-Comparison with the baseline TransUNet under the same Frame-Mix protocol:
-
-| Model | Internal Dice | Holdout Dice | Delta |
-|-------|--------------|--------------|--------|
-| Baseline | ~86% | ~69% | -16.73% |
-| Robust Model | ~93% | ~70% | -23.12% |
+- Dice remains above **90%** across all thresholds
+- Best Dice is obtained at threshold **0.4**
+- Precision and recall remain simultaneously high
+- The threshold curve is unusually stable
 
 ### Interpretation
 
-Increasing model capacity does not mitigate bias:
-
-- It **amplifies it**
-- The model becomes more efficient at memorization
-- The gap between internal and real performance widens
+This threshold stability suggests that the model is very confident on the internal test distribution.  
+Under Frame-Mix conditions, this confidence is likely supported by strong visual similarity between training and test frames.
 
 ---
 
-## 5. Final Assessment
+## 4. Independent Holdout Evaluation
 
-The apparent superiority of the robust architecture is an **artifact of evaluation bias**.
+Evaluation on fully unseen patients reveals a clear drop in performance.
 
-- Internal performance: inflated by leakage
-- Real performance: constrained by generalization limits
+### Independent Dice / IoU
+
+![Independent Dice IoU](curves/independant_iou_dice.png)
+
+### Independent Precision / Recall
+
+![Independent Precision Recall](curves/independant_rec_prec.png)
+
+| Epoch | Internal Test Dice | Holdout Mean Dice | Delta | Holdout Precision | Holdout Recall |
+|------|--------------------|-------------------|-------|-------------------|----------------|
+| 20 | N/A | 68.87% | N/A | 88.61% | 57.69% |
+| 30 | 92.45% | 73.66% | -18.79% | 89.56% | 62.63% |
+| 40 | 93.07% | 72.24% | -20.83% | 90.09% | 61.22% |
+| 50 | 93.29% | 70.17% | -23.12% | 91.03% | 57.88% |
+
+### Key Observation
+
+- Internal Dice increases up to **93.29%**
+- Holdout Mean Dice decreases to **70.17%** at Epoch 50
+- Precision remains high
+- Recall remains much lower than internal evaluation would suggest
+
+### Interpretation
+
+On independent patients, the model remains conservative:
+
+- It avoids many false positives
+- It misses a substantial fraction of true lesion pixels
+- The main failure mode is under-segmentation rather than over-segmentation
+
+---
+
+## 5. Epoch-Level Generalization Pattern
+
+| Epoch | Internal Test Dice | Holdout Mean Dice |
+|------|--------------------|-------------------|
+| 30 | 92.45% | 73.66% |
+| 40 | 93.07% | 72.24% |
+| 50 | 93.29% | 70.17% |
+
+### Observation
+
+From Epoch 30 to Epoch 50:
+
+- Internal test performance improves slightly
+- Independent holdout performance decreases
+
+### Interpretation
+
+The best independent generalization is observed at **Epoch 30**.  
+Later epochs improve performance mainly on the internal Frame-Mix distribution, while external performance declines.
+
+This indicates progressive specialization to the training/test distribution rather than improved clinical generalization.
+
+---
+
+## 6. Per-Patient Holdout Breakdown
+
+| Epoch | Patient Group | Images | Predicted Positive Images | Mean Dice |
+|------|---------------|--------|---------------------------|----------|
+| 20 | TNP | 1350 | 1329 / 1350 | 65.59% |
+| 20 | TP | 2882 | 2869 / 2882 | 70.40% |
+| 30 | TNP | 1350 | 1348 / 1350 | 72.35% |
+| 30 | TP | 2882 | 2880 / 2882 | 74.28% |
+| 40 | TNP | 1350 | 1333 / 1350 | 70.97% |
+| 40 | TP | 2882 | 2872 / 2882 | 72.84% |
+| 50 | TNP | 1350 | 1317 / 1350 | 68.65% |
+| 50 | TP | 2882 | 2873 / 2882 | 70.88% |
+
+### Observation
+
+Epoch 30 provides the strongest independent holdout performance:
+
+> **73.66% Mean Dice**
+
+After Epoch 30, holdout performance decreases despite continued improvement on internal metrics.
+
+---
+
+## 7. Final Assessment
+
+The Frame-Mix protocol gives this model an inflated internal estimate of performance.
+
+- Internal evaluation suggests near-perfect segmentation
+- Independent holdout evaluation reveals a substantially lower real-world performance
+- The gap increases with later epochs
+- The model becomes progressively more specialized to the Frame-Mix distribution
 
 ### True Performance Estimate
 
-> **~73.66% Dice (Epoch 30)** represents the best generalization point before overfitting dominates
+> **73.66% Mean Dice at Epoch 30** is the best observed independent generalization point.
 
 ---
 
-## 6. Auditor Conclusion
+## 8. Auditor Conclusion
 
-Using a high-capacity model (ResNetV2 + Transformer) on a dataset affected by data leakage:
-
-- Does not correct the bias  
-- **Exacerbates it**
+Under the Frame-Mix protocol, the robust TransUNet achieves very high internal scores, but these scores do not transfer to independent patients.
 
 ### Final Insight
 
-- The model learns:
-  - Dataset-specific signatures  
-- Instead of:
-  - Generalizable disease features  
+The model learns highly effective representations for the internal distribution, but the independent holdout shows that its clinical generalization is limited.
 
-This results in:
-
-> A stronger illusion of performance and a more severe clinical failure
+The main risk is that the internal score of **93.29% Dice** overstates the model’s real independent performance, which peaks at **73.66% Dice**.
 
 ---
