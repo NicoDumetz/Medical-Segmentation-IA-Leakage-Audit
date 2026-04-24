@@ -42,6 +42,3 @@ checkpoints/
 Dataset_Lesion_Comparison/
 independent_eval_results.json
 threshold_test_results.json
-
-# Project outputs
-results/
