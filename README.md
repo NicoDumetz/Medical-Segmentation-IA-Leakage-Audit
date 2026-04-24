@@ -143,7 +143,7 @@ pip install -r requirement.txt
 Example:
 
 ```
-DATASET_ROOT=/path/to/dataset python3 src/nourredine/train.py
+DATASET_ROOT=/path/to/dataset python3 src/model/train.py
 ```
 
 ---

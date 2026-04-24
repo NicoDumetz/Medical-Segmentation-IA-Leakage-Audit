@@ -1,5 +1,5 @@
 
-/workspace# DATASET_ROOT=/tmp/Dataset_Comparison/dataset/ python3 src/nourredine/train.py
+/workspace# DATASET_ROOT=/tmp/Dataset_Comparison/dataset/ python3 src/model/train.py
 Training on cuda | train=9703 | val=1215 | batch=8 | workers=8 | val_split=val
 Epochs:   0%|                                                                | 0/50 [00:00<?, ?it/s]                                         Epoch 1/50 | Train Loss: 0.2171 | Train Dice: 0.4725 | Val Dice: 0.5644
 Epochs:   2%| | 1/50 [03:32<2:53:28, 212.42s/it, train_dice=0.4725, train_loss=0.2171, val_dice=0.56                                         Epoch 2/50 | Train Loss: 0.1850 | Train Dice: 0.5537 | Val Dice: 0.4598
@@ -54,7 +54,7 @@ Epochs:  98%|▉| 49/50 [2:44:10<02:49, 169.86s/it, train_dice=0.8204, train_los
 Epochs: 100%|█| 50/50 [2:45:46<00:00, 198.93s/it, train_dice=0.8214, train_loss=0.0729, val_dice=0.4
 root@3a7caa75539a:/workspace#
 
-oot@9f5dc49942aa:/workspace# python3 src/nourredine/threshold_test.py   --model-path checkpoints/epoch_50.pth   --dataset-root /tmp/Dataset_Comparison/dataset/
+oot@9f5dc49942aa:/workspace# python3 src/model/threshold_test.py   --model-path checkpoints/epoch_50.pth   --dataset-root /tmp/Dataset_Comparison/dataset/
 Device: cuda
 Test dataset: /tmp/Dataset_Comparison/dataset/test
 Images: 2338
@@ -83,7 +83,7 @@ FINAL VERDICT: threshold 0.1 gives 62.58% Dice.
 Results saved to: /workspace/threshold_test_results.json
 
 lts saved to: /workspace/threshold_test_results.json
-root@9f5dc49942aa:/workspace# python3 src/nourredine/indepedant.py \
+root@9f5dc49942aa:/workspace# python3 src/model/indepedant.py \
   --model-path checkpoints/epoch_50.pth \
   --dataset-root /tmp/Dataset_Comparison \
   --save-predictions-dir /tmp/indep_preds

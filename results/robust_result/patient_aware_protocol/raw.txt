@@ -1,5 +1,5 @@
 
-:/workspace# DATASET_ROOT=/tmp/Dataset_Comparison/dataset/ python3 src/nourredine_paper/train.py
+:/workspace# DATASET_ROOT=/tmp/Dataset_Comparison/dataset/ python3 src/model/train.py
 Training on cuda | train=9703 | val=1215 | batch=8 | workers=8 | val_split=val
 Epochs:   0%|                                                                | 0/50 [00:00<?, ?it/s]                                      Epoch 1/50 | Train Loss: 0.1585 | Train Dice: 0.6028 | Val Dice: 0.5983
 Epochs:   2%| | 1/50 [02:15<1:50:55, 135.83s/it, train_dice=0.6028, train_loss=0.1585, val_dice=0.59                                      Epoch 2/50 | Train Loss: 0.1057 | Train Dice: 0.7306 | Val Dice: 0.5410
@@ -54,7 +54,7 @@ Epochs:  98%|▉| 49/50 [1:47:33<02:10, 130.62s/it, train_dice=0.9492, train_los
 Epochs: 100%|█| 50/50 [1:49:45<00:00, 131.71s/it, train_dice=0.9497, train_loss=0.0203, val_dice=0.6
 root@a99bd86a5136:/workspace#
 
- python3 src/nourredine_paper/threshold_test.py   --model-path checkpoints/epoch_50.pth   --dataset-root /tmDataset_Comparison/dataset/
+ python3 src/model/threshold_test.py   --model-path checkpoints/epoch_50.pth   --dataset-root /tmDataset_Comparison/dataset/
 Device: cuda
 Test dataset: /tmp/Dataset_Comparison/dataset/test
 Images: 2338
@@ -84,7 +84,7 @@ Results saved to: /workspace/threshold_test_results.json
 root@a99bd86a5136:/workspace#
 
 
-workspace# python3 src/nourredine_paper/threshold_test.py   --model-path checkpoints/epoch_30.pth   --dataset-root /tmp/Dataset_Comparison/dataset/
+workspace# python3 src/model/threshold_test.py   --model-path checkpoints/epoch_30.pth   --dataset-root /tmp/Dataset_Comparison/dataset/
 Device: cuda
 Test dataset: /tmp/Dataset_Comparison/dataset/test
 Images: 2338
@@ -114,7 +114,7 @@ Results saved to: /workspace/threshold_test_results.json
 root@a99bd86a5136:/workspace#
 
 
-rc/nourredine_paper/threshold_test.py   --model-path checkpoints/epoch_20.pth   --dataset-root /tmp/Dataset_Comparison/dataset/
+rc/model/threshold_test.py   --model-path checkpoints/epoch_20.pth   --dataset-root /tmp/Dataset_Comparison/dataset/
 Device: cuda
 Test dataset: /tmp/Dataset_Comparison/dataset/test
 Images: 2338
@@ -144,7 +144,7 @@ Results saved to: /workspace/threshold_test_results.json
 root@a99bd86a5136:/workspace#
 
 
-ce# python3 src/nourredine_paper/indepedant.py   --model-path checkpoints/epoch_30.pth   --dataset-root /tmp/Dataset_Comparison
+ce# python3 src/model/indepedant.py   --model-path checkpoints/epoch_30.pth   --dataset-root /tmp/Dataset_Comparison
 Device: cuda
 Independent dataset: /tmp/Dataset_Comparison/independent
 Images: 4232
@@ -173,7 +173,7 @@ tp          |   2882 |    2882 |      2857 |    67.95% |   67.95%
 
 Results saved to: /workspace/independent_eval_results.json
 
- python3 src/nourredine_paper/indepedant.py   --model-path checkpoints/epoch_50.pth   --dataset-root /tmp/Dataset_Comparison
+ python3 src/model/indepedant.py   --model-path checkpoints/epoch_50.pth   --dataset-root /tmp/Dataset_Comparison
 Device: cuda
 Independent dataset: /tmp/Dataset_Comparison/independent
 Images: 4232
@@ -203,7 +203,7 @@ tp          |   2882 |    2882 |      2846 |    68.65% |   68.65%
 Results saved to: /workspace/indep
 
 
-# python3 src/nourredine_paper/indepedant.py   --model-path checkpoints/epoch_20.pth   --dataset-root /tmp/Dataset_Comparison
+# python3 src/model/indepedant.py   --model-path checkpoints/epoch_20.pth   --dataset-root /tmp/Dataset_Comparison
 Device: cuda
 Independent dataset: /tmp/Dataset_Comparison/independent
 Images: 4232

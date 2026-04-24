@@ -1,5 +1,5 @@
 
-bb5a:/workspace# DATASET_ROOT=/tmp/Dataset_Comparison/frame_mix python3 src/nourredine/train.py
+bb5a:/workspace# DATASET_ROOT=/tmp/Dataset_Comparison/frame_mix python3 src/model/train.py
 Training on cuda | train=10604 | val=1325 | batch=8 | workers=8 | val_split=val
 Epochs:   0%|                                                                | 0/50 [00:00<?, ?it/s]                                                       Epoch 1/50 | Train Loss: 0.2221 | Train Dice: 0.4674 | Val Dice: 0.5382
 Epochs:   2%| | 1/50 [03:53<3:11:05, 233.99s/it, train_dice=0.4674, train_loss=0.2221, val_dice=0.53                                                       Epoch 2/50 | Train Loss: 0.1902 | Train Dice: 0.5585 | Val Dice: 0.6458
@@ -55,11 +55,11 @@ Epochs: 100%|█| 50/50 [2:40:55<00:00, 193.11s/it, train_dice=0.8228, train_los
 root@a959d41bbb5a:/workspace#
 
 
-:/workspace# python3 src/nourredine/threshold_test.py \
+:/workspace# python3 src/model/threshold_test.py \
   --model-path checkpoints/epoch_50.pth \
   --dataset-root /tmp/Dataset_Comparison/frame_mix
-python3: can't open file '/workspace/src/nourredine/threshold_test.py': [Errno 2] No such file or directory
-root@bf59d926839e:/workspace# python3 src/nourredine/threshold_test.py   --model-path checkpoints/epoch_50.pth   --dataset-root /tmp/Dataset_Comparison/frame_mix
+python3: can't open file '/workspace/src/model/threshold_test.py': [Errno 2] No such file or directory
+root@bf59d926839e:/workspace# python3 src/model/threshold_test.py   --model-path checkpoints/epoch_50.pth   --dataset-root /tmp/Dataset_Comparison/frame_mix
 Device: cuda
 Test dataset: /tmp/Dataset_Comparison/frame_mix/test
 Images: 1327
@@ -90,7 +90,7 @@ root@bf59d926839e:/workspace#
 (logique)
 
 
-root@bf59d926839e:/workspace# python3 src/nourredine/indepedant.py \
+root@bf59d926839e:/workspace# python3 src/model/indepedant.py \
   --model-path checkpoints/epoch_50.pth \
   --dataset-root /tmp/Dataset_Comparison \
   --save-predictions-dir /tmp/indep_preds
