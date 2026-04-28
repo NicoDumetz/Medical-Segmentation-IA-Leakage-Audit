@@ -12,6 +12,28 @@ This work demonstrates how **Frame-Mix leakage** leads to misleading conclusions
 
 ---
 
+## Documentation and Reports
+
+### Documentation
+
+- [Problem Statement](docs/problem_statement.md)
+- [Splitting Protocol](docs/splitting_protocol.md)
+- [Model Architectures](docs/model_architectures.md)
+- [Technical Implementation](docs/technical_implementation.md)
+- [Metrics and Evaluation](docs/metrics_and_evalutation.md)
+- [Global Clinical Risk Report](docs/global_clinical_risk_report.md)
+
+### Experiment Reports
+
+- [Baseline Frame-Mix Summary](results/baseline_results/frame_mix_protocol/summary_report.md)
+- [Baseline Patient-Aware Summary](results/baseline_results/patient_aware_protocol/summary_report.md)
+- [Baseline Comparison Summary](results/baseline_results/baseline_comparison_summary.md)
+- [Robust Frame-Mix Summary](results/robust_result/frame_mix_protocol/summary_report.md)
+- [Robust Patient-Aware Summary](results/robust_result/patient_aware_protocol/summary_report.md)
+- [Robust Comparison Summary](results/robust_result/robust_summary_comparison.md)
+
+---
+
 ## Repository Structure
 
 ```
